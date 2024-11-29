@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 dotenv.config(); // Cargar las variables de entorno
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 // Middleware 
@@ -75,7 +75,7 @@ app.post('/register', (req, res) => {
 });
 
 // Iniciar servidor
-app.listen(port, 'localhost', () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
 });
 
